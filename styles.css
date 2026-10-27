@@ -264,7 +264,7 @@ a { color: inherit; }
 /* Visit */
 .visit { display: grid; background: var(--red); color: #fff; }
 .visit-pic { aspect-ratio: 16 / 10; overflow: hidden; }
-.visit-pic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+.visit-pic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
 .visit-block { padding: 28px var(--pad) 32px; }
 .visit-block h2 { font-size: clamp(48px, 12vw, 104px); }
 .visit-lines { margin: 18px 0 22px; border-top: 4px solid #fff; }
@@ -314,7 +314,11 @@ a { color: inherit; }
   .card { position: relative; margin: -28px 12px 0 0; padding: 0 var(--pad) 16px; background: var(--paper); }
   .fight-card a { min-height: 44px; padding: 3px 0; }
   .note { margin: 8px 0 12px; }
+  .note-wide, .card .wide-btn { display: none; }
+  .note-phone { margin: 0; padding: 0 var(--pad) 12px; }
+  .card .btn-row { margin-top: 12px; }
 }
+@media (min-width: 600px) { .note-phone { display: none; } }
 
 /* Very small phones: tighter rhythm */
 @media (max-width: 359px) {
@@ -322,7 +326,7 @@ a { color: inherit; }
   .site-header { padding: 6px var(--pad); }
   .brand img { width: 44px; height: 44px; }
   .wordmark { font-size: 26px; }
-  .hero-pic { flex-basis: 26svh; }
+  .hero-pic { flex-basis: 48svh; }
   .hero-block { margin-right: 12px; padding: 18px var(--pad) 18px; }
   .hero h1 { font-size: 44px; }
   .hero-sub { margin: 10px 0 14px; font-size: 16px; }
@@ -338,11 +342,12 @@ a { color: inherit; }
   .s-name { font-size: 16px; }
   .s-price { font-size: 24px; }
   .note { margin: 6px 0 10px; }
-  .coach-pic { aspect-ratio: 16 / 9; }
+  .coach-pic { aspect-ratio: 2 / 1; }
   .coach-body { padding-top: 20px; }
   .coach-body h2 { font-size: 38px; }
   .coach-body > p { margin-top: 12px; font-size: 16px; }
   .rack-pic { margin-top: 8px; }
+  .rack-pic img { aspect-ratio: 2 / 1; }
   .coaches { padding: 14px var(--pad) 16px; }
   .coaches-title { font-size: 28px; }
   .c-name { font-size: 24px; }
@@ -395,7 +400,8 @@ a { color: inherit; }
     min-height: 620px;
   }
   .hero-pic { position: absolute; inset: 0; }
-  .hero-pic img { object-position: 50% 50%; }
+  .hero-pic { overflow: hidden; }
+  .hero-pic img { top: -32%; height: 132%; object-position: 50% 100%; }
   .hero-block {
     width: min(760px, 62%);
     margin: 0;
